@@ -10,7 +10,7 @@ on:
 
 jobs:
   backup:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: Backup
     timeout-minutes: 10
     steps:
@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - run: npm install && npm test
       
       - name: Run Backup
         run: |
